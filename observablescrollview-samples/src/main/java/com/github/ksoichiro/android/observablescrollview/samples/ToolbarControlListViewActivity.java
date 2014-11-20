@@ -25,13 +25,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
-
-import com.github.ksoichiro.android.observablescrollview.ObservableListView;
+import com.github.ksoichiro.android.observablescrollview.ObservableModifyListView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.nineoldandroids.view.ViewHelper;
 import com.nineoldandroids.view.ViewPropertyAnimator;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +38,7 @@ public class ToolbarControlListViewActivity extends ActionBarActivity implements
     private static final String TAG = ToolbarControlListViewActivity.class.getSimpleName();
     private View mHeaderView;
     private View mToolbarView;
-    private ObservableListView mListView;
+    private ObservableModifyListView mListView;
     private int mBaseTranslationY;
 
     @Override
@@ -54,7 +52,7 @@ public class ToolbarControlListViewActivity extends ActionBarActivity implements
         ViewCompat.setElevation(mHeaderView, getResources().getDimension(R.dimen.toolbar_elevation));
         mToolbarView = findViewById(R.id.toolbar);
 
-        mListView = (ObservableListView) findViewById(R.id.list);
+        mListView = (ObservableModifyListView) findViewById(R.id.list);
         mListView.setScrollViewCallbacks(this);
 
         LayoutInflater inflater = LayoutInflater.from(this);
